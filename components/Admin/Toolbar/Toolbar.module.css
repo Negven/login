@@ -1,0 +1,11 @@
+.toolbar{
+    height: 60px;
+    width: 100%;
+    display: flex;
+    position: absolute;
+
+}
+
+.iconeComp{
+    position: absolute
+}
