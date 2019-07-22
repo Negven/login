@@ -12,6 +12,7 @@ export default function Plan(props){
 
     return(
         <>
+        {/* <div>ss</div> */}
             <div>План занять</div>
             <div>Обрати вчителя</div>
             <Select
