@@ -1,0 +1,63 @@
+.typeLine {
+    display: flex;
+    font-size: 20px;
+    height: 50px;
+    color: #545A89;
+}
+
+.enterTypeLine {
+    display: flex;
+    font-size: 20px;
+    height: 50px;
+    color: #545A89;
+    background: #DCE1FF;
+}
+
+.numberBlock {
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 20px;
+    width:350px;
+}
+
+.number {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 20px;
+    width: 33px;
+    text-align: center;
+}
+
+.id {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 20px;
+}
+
+.name {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 20px;
+    width: 400px;
+}
+
+.mail {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 20px;
+    width:380px;
+}
+
+.profession {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 20px;
+    width: 100px;
+}
+
+.teachBtn {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+}

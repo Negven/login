@@ -1,0 +1,54 @@
+.choose{
+    margin: auto;
+}
+
+.blockSelect{
+    display: flex;
+    text-align: center;
+    top:41px;
+}
+
+.cell{
+    color: white;
+    background: #8A91C2;
+    width: 60px;
+    font-size: 20px;
+    height: 30px;
+    margin: auto;
+    
+
+}
+
+.cellEnter{
+    color: white;
+    background: #545a89;
+    width: 60px;
+    font-size: 20px;
+    height: 30px;
+    margin: auto;
+
+}
+
+.value{
+    color: white;
+    background: #8A91C2;
+    width: 120px;
+    top:11px;
+    margin: auto;
+    left: 50%;
+    text-align: center;
+    height: 30px;
+    font-size: 20px;
+    /* border-radius: 10px 10px 0px 0px */
+}
+
+.textSel{
+    margin: 7px; 
+}
+
+
+.select{
+    position: absolute;
+    margin-left: 45%;
+    margin-top: 14px; 
+}

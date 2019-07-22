@@ -1,0 +1,54 @@
+.line {
+    display: flex;
+    margin-top: 10px;
+    height: 56px;
+}
+
+.number {
+    width: 56px;
+    height: 56px;
+    margin-left: 30px;
+}
+
+
+.time {
+    margin-left: 15px;
+    width: 102px;
+}
+
+.durations {
+    margin-left: 15px;
+}
+
+.lessons {
+    margin-left: 15px;
+    width: 300px;
+}
+
+.teacher {
+    margin-left: 15px;
+    width: 300px
+}
+
+.group {
+    margin-left: 15px;
+    width: 150px;
+}
+
+.buttons {
+    width: 112px;
+    display: flex;
+    margin-left: 10px; 
+}
+
+.closeBtn {
+    display: flex;
+    width: 56px;
+    justify-content: center;
+}
+
+.saveBtn {
+    display: flex;
+    width: 56px;
+    justify-content: center;
+}
