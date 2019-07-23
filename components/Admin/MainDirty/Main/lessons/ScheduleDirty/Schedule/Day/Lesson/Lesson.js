@@ -141,7 +141,7 @@ export default function Lesson(props){
                 >
                     {props.lessons.map((e, i)=>{
                         return (
-                            <MenuItem key={"lesson" + i} value={e.id}>{e.name}</MenuItem>
+                            <MenuItem  key={"lesson" + i} value={e.id}>{e.name}</MenuItem>
                     )})}
                 </Select>
                 <Select
