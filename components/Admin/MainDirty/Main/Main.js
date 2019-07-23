@@ -9,6 +9,7 @@ import SchoolboysDirty from './users/SchoolboysDirty/SchoolboysDirty.js';
 import TypesDirty from './setup/TypesDirty/TypesDirty.js';
 import LessonsDirty from './setup/LessonsDirty/LessonsDirty.js';
 import PositionsDirty from './setup/PositionsDirty/PositionsDirty.js';
+import GroupDirty from './lessons/GroupDirty/GroupDirty.js';
 
 class Main extends React.Component {
     // constructor(props){
@@ -120,7 +121,13 @@ class Main extends React.Component {
                                             groups={this.props.state.groups}
 
             />
-        } 
+        } else if(this.props.state.stateMain === 5){
+            this.startState = <GroupDirty   
+                                            lessons={this.props.state.lessons}
+                                            schoolboys={this.props.state.schoolboys}
+                                            groups={this.props.state.groups}
+            />
+        }         
         else if(this.props.state.stateMain === 7) {
             if(this.props.state.stateDelete === 1){
                 this.props.state.popUpDelete = <Delete
@@ -159,7 +166,7 @@ class Main extends React.Component {
                                         state={ this.props.state.lessons }                       
             />
         }
-        else if(this.props.state.stateMain === 9) {
+        else if(this.props.state.stateMain ===    9) { 
             if(this.props.state.stateDelete === 1){
                 this.props.state.popUpDelete = <Delete
                 stateMain={this.props.state.stateMain}

@@ -429,15 +429,51 @@ class Admin extends React.Component {
         days: ['Понеділок', 'Вівторок', 'Середа', 'Четвер', `П'ятниця`, 'Субота', 'Неділя'],
         durations: ['30', '35', '40', '45', '50', '55', '60'],
         groups: [
-            {
-                name: '1 Группа',
-                id: 0,
-            },
-            {
-                name: '2 Группа',
-                id: 1,
-            }
+            [
+                {
+                    name: '1 Группа',
+                    id: 0,
+                    pupils: [ 0, 1 ],
+                },
+                {
+                    name: '2 Группа',
+                    id: 1,
+                    pupils: [ 3, 2 ],
+                }
+            ],
+            [
+                {
+                    name: '1 Группа',
+                    id: 0,
+                    pupils: [ 0, 1, 2, 3 ],
+                },
+            ],
+            [
+                {
+                    name: '1 Группа',
+                    id: 0,
+                    pupils: [ 0, 1 ],
+                },
+                {
+                    name: '2 Группа',
+                    id: 1,
+                    pupils: [ 3, 2 ],
+                }
+            ],
+            [
+                {
+                    name: '1 Группа',
+                    id: 0,
+                    pupils: [ 2, 3 ],
+                },
+                {
+                    name: '2 Группа',
+                    id: 1,
+                    pupils: [ 1, 0 ],
+                }
+            ],
         ],
+        plan: [],
         stateMain: 0,
         stateDelete: 0,
         popUpDelete: null,
@@ -459,6 +495,9 @@ class Admin extends React.Component {
         },
         changeStateSchedule: () => {
             this.setState({stateMain: 4}) 
+        },
+        changeStateGroup: () => {
+            this.setState({stateMain: 5}) 
         },
         changeStateType: () => {
             this.setState({stateMain: 7}) 
@@ -796,6 +835,12 @@ class Admin extends React.Component {
                 this.setState({ state: newState })
             },
         },
+        stateFuncChangPosition: {
+            changeTeacher: (value) => {
+                let newState = { ...this.state }
+                
+            }
+        }
     }
     
 

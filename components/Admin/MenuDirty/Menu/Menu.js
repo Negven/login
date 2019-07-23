@@ -90,7 +90,7 @@ const ExpansionPanel = withStyles({
                         Розклад уроків
                     </Typography>
                     </ExpansionPanelDetails>
-                    <ExpansionPanelDetails>
+                    <ExpansionPanelDetails onClick={props.stateFunc.changeStateGroup}>
                     <Typography>
                         Групування
                     </Typography>
