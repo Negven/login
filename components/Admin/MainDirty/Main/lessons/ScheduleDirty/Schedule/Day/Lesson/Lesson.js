@@ -80,6 +80,7 @@ export default function Lesson(props){
       }));
       props.stateFunc.changeGroup(event.target.value, props.idDay, props.idLesson)
     }  
+    
     return(
         <>
             <div className={Classes.line}>
@@ -169,9 +170,9 @@ export default function Lesson(props){
                         id: 'age-simple',
                     }}
                 >
-                    {props.groups.map((e, i)=>{
+                    {props.groups[props.schedule[props.idDay][props.idLesson].lessonId].map((e, i)=>{
                         return (
-                            <MenuItem key={"teacher" + i} value={e.id}>{e.name}</MenuItem>
+                            <MenuItem key={"group" + i} value={e.id}>{e.name}</MenuItem>
                     )})}
                 </Select>
                 <div className={Classes.buttons} variant="outlined" >
@@ -182,3 +183,15 @@ export default function Lesson(props){
         </>
     )
 }
+
+
+
+
+
+
+
+
+
+
+
+

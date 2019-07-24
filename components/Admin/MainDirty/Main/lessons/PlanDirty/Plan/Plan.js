@@ -10,9 +10,16 @@ import { OutlinedInput } from '@material-ui/core';
 
 export default function Plan(props){
 
+    function handleChangeNumber(event) {
+        setValues(oldValues => ({
+          ...oldValues,
+          [event.target.name]: event.target.value,
+        }));
+        props.stateFunc.changeNumber(event.target.value, props.idDay, props.idLesson)
+    }
+
     return(
         <>
-        {/* <div>ss</div> */}
             <div>План занять</div>
             <div>Обрати вчителя</div>
             <Select

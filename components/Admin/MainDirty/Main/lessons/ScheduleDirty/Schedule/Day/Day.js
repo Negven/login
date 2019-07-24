@@ -21,6 +21,7 @@ export default function Day (props){
                             allLessons={props.state} 
                             idLesson={idLesson} 
                             durations={props.durations}
+                            schedule={props.schedule}
                             teachers={props.teachers}
                             idDay={props.idDay} 
                             groups={props.groups}

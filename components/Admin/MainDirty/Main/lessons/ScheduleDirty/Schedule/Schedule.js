@@ -20,6 +20,7 @@ class Schedule extends React.Component {
                             teachers={this.props.teachers}
                             stateFunc={this.props.stateFunc}
                             days={this.props.days}
+                            schedule={this.props.schedule}
                             lessons={this.props.lessons}
                             durations={this.props.durations}
                             groups={this.props.groups}
