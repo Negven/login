@@ -507,7 +507,9 @@ export default class App extends Component {
         stateMainAdmin: 0,
         stateDelete: 0,
         popUpDelete: null,
+        closeSelect: false,
         id: 0,
+        classId: null,
     },
 
 
@@ -515,13 +517,15 @@ export default class App extends Component {
     stateFuncToolbar: {
       open: () => {
         let newState = { ...this.state }
-        this.newState.stateAdmin.state.closeSelect = !this.newState.stateAdmin.state.closeSelect
+        newState.stateAdmin.state.closeSelect = !newState.stateAdmin.state.closeSelect
+        console.log(newState.stateAdmin.state.closeSelect)
         this.setState({ state: newState })
       },
       select: (value) => {
-          this.value = value;
-          this.props.state.closeSelect = !this.props.state.closeSelect
-          this.forceUpdate()
+          let newState = { ...this.state }
+          newState.stateAdmin.state.classId = value;
+          newState.stateAdmin.state.closeSelect = !newState.stateAdmin.state.closeSelect
+          this.setState({ state: newState })
       },  
       enterSelect: (id) => {
           document.getElementById(id).classList.value = Classes.cellEnter
@@ -577,7 +581,7 @@ export default class App extends Component {
         selectLesson: (value, id) => {
             let x = true;
             let newState = { ...this.state }
-            for (let i in this.state.teachers[id].lessons){
+            for (let i in newState.stateAdmin.state.teachers[id].lessons){
                 if(newState.stateAdmin.state.lessons[value].name === newState.stateAdmin.state.teachers[id].lessons[i]){ x = false}
             }
             if(x){
@@ -601,19 +605,27 @@ export default class App extends Component {
             this.setState({ })
         },
         openDelete: (id) => {
-            this.setState({id: id})
-            this.setState({ stateDelete: 1})
+            let newState = { ...this.state }
+            newState.stateAdmin.state.id = id
+            newState.stateAdmin.state.stateDelete = 1
+            this.setState({ state: newState })
         },
         openAdd: (id) => {
-            this.setState({id: id})
-            this.setState({ stateDelete: 2})
+            let newState = { ...this.state }
+            newState.stateAdmin.state.id = id
+            newState.stateAdmin.state.stateDelete = 2
+            this.setState({ state: newState })
         },
         closeDelete: () => {
-            this.setState({stateDelete: 0})
+            let newState = { ...this.state }
+            newState.stateAdmin.state.stateDelete = 0
+            this.setState({ state: newState })
         },
         stateFuncChangTeacher: {
             stateDeleteTeacher: (value) => {
-                this.setState({teachers: value}) 
+                let newState = { ...this.state }
+                newState.stateAdmin.state.teachers = value
+                this.setState({ state: newState })
             },
             changeSecondName: (value, id) => {
                 let newState = { ...this.state }
@@ -780,12 +792,12 @@ export default class App extends Component {
             addLesson: (idDay) => {
                 let newState = { ...this.state }
                 let lesson = {
-                    number: this.state.schedule[idDay].length + 1 ,
+                    number: newState.stateAdmin.state.schedule[idDay].length + 1 ,
                     time: '',
                     duration: null,
                     lessonId: 0,
                     teacher: 0,
-                    group: 0,
+                    group: [],
                     change: 0,
                 }
                 newState.stateAdmin.state.schedule[idDay].push(lesson)
@@ -882,6 +894,16 @@ export default class App extends Component {
                 newState.stateAdmin.state.lessons[id].shortName = value;
                 this.setState({ state: newState })
             },
+            stateFuncAdd: {
+                changeName: (value) => {
+                    this.state.lesson.name = value;
+                    this.forceUpdate()
+                },
+                changeShortName: (value) => {
+                    this.state.lesson.shortName = value;
+                    this.forceUpdate()
+                },
+            }
         },
         stateFuncChangPosition: {
             stateDeletePosition: (value) => {
@@ -903,7 +925,7 @@ export default class App extends Component {
                 let newState = { ...this.state }
                 
             }
-        }
+        },
     }
   }
   };
