@@ -5,34 +5,45 @@
 }
 
 .number {
-    width: 56px;
-    height: 56px;
+    width: 20px;
     margin-left: 30px;
+    color: #545A89;
+    font-size: 26px;
 }
 
 
 .time {
-    margin-left: 15px;
-    width: 102px;
+    margin-left: 30px;
+    width: 100px;
+    color: #545A89;
+    font-size: 26px;
 }
 
 .durations {
-    margin-left: 15px;
+    margin-left: 30px;
+    color: #545A89;
+    font-size: 26px;
 }
 
 .lessons {
-    margin-left: 15px;
-    width: 300px;
+    margin-left: 30px;
+    width: 200px;
+    color: #545A89;
+    font-size: 26px;
 }
 
 .teacher {
     margin-left: 15px;
-    width: 300px
+    width: 300px;
+    color: #545A89;
+    font-size: 26px;
 }
 
 .group {
     margin-left: 15px;
     width: 150px;
+    color: #545A89;
+    font-size: 26px;
 }
 
 .buttons {

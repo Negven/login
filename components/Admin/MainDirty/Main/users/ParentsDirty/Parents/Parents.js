@@ -2,7 +2,6 @@ import React from 'react'
 import Parent from './Parent/Parent'
 import Classes from './Parents.module.css'
 import plus from './plus.svg'
-import AddParentsDirty from './AddParentsDirty/AddParentsDirty';
 
 class Parents extends React.Component {
     constructor(props){
@@ -10,19 +9,14 @@ class Parents extends React.Component {
     }
 
 
-    stateAdd=null;
 
     render(){
-        if(this.props.stateAdd === 1){
-            this.stateAdd = <AddParentsDirty closeAddParent={this.props.closeAddParent} addParent={this.props.addParent}/>
-        } else this.stateAdd = null
+
 
         return(
             <div>
-                {this.stateAdd}
                 <div className={Classes.addTeach}>
                     <div>Батьки</div>
-                    <div className={Classes.addBtn} onClick={this.props.openAddParent}><img src={plus}/></div>
                 </div>
                 <div className={Classes.parentLine}>
                     <div className={Classes.numberTitle}>№</div>
@@ -40,9 +34,6 @@ class Parents extends React.Component {
                             lessons = {this.props.lessons}
                             parents = {this.props.state}
                             profession={this.props.profession} 
-                            openDelete={this.props.openDelete}
-                            openAdd={this.props.openAdd}
-                            
                             key={"parent" + i}
                             />
                     )

@@ -2,7 +2,6 @@ import React from 'react'
 import Type from './Type/Type'
 import Classes from './Types.module.css'
 import plus from './plus.svg'
-import AddTypeDirty from './AddTypeDirty/AddTypeDirty';
 
 class Types extends React.Component {
     constructor(props){
@@ -10,19 +9,13 @@ class Types extends React.Component {
     }
 
 
-    stateAdd=null;
 
     render(){
-        if(this.props.stateAdd === 1){
-            this.stateAdd = <AddTypeDirty profession={this.props.profession} closeAdd={this.props.closeAddType} addType={this.props.stateFunc.stateFuncChangType.addType}/>
-        } else this.stateAdd = null
 
         return(
             <div>
-                {this.stateAdd}
                 <div className={Classes.addTeach}>
                     <div>Учні</div>
-                    <div className={Classes.addBtn} onClick={this.props.openAddType}><img src={plus}/></div>
                 </div>
                 <div className={Classes.typeLine}>
                     <div className={Classes.numberTitle}>№</div>
@@ -39,10 +32,6 @@ class Types extends React.Component {
                             types = {this.props.state}
                             profession={this.props.profession} 
                             key={"type" + i}
-                            closeDelete={this.props.closeDelete}
-                            openDelete={this.props.openDelete}
-                            openAdd={this.props.openAdd}
-                            stateDelete={this.props.stateDelete}
 
 
                             />

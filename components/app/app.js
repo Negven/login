@@ -296,7 +296,7 @@ export default class App extends Component {
                 {
                     number: 1,
                     time: '09:00:00',
-                    duration: 45,
+                    duration: 1,
                     lessonId: 2,
                     teacher: 1,
                     group: 0,
@@ -305,7 +305,7 @@ export default class App extends Component {
                 {
                     number: 2,
                     time: '09:55:00',
-                    duration: 45,
+                    duration: 1,
                     lessonId: 2,
                     teacher: 1,
                     group: 0,
@@ -314,7 +314,7 @@ export default class App extends Component {
                 {
                     number: 3,
                     time: '10:50:00',
-                    duration: 45,
+                    duration: 1,
                     lessonId: 2,
                     teacher: 1,
                     group: 0,
@@ -325,7 +325,7 @@ export default class App extends Component {
                 {
                     number: 1,
                     time: '09:00:00',
-                    duration: 45,
+                    duration: 1,
                     lessonId: 2,
                     teacher: 1,
                     group: 0,
@@ -334,7 +334,7 @@ export default class App extends Component {
                 {
                     number: 2,
                     time: '09:55:00',
-                    duration: 45,
+                    duration: 1,
                     lessonId: 2,
                     teacher: 1,
                     group: 0,
@@ -343,7 +343,7 @@ export default class App extends Component {
                 {
                     number: 3,
                     time: '10:50:00',
-                    duration: 45,
+                    duration: 1,
                     lessonId: 2,
                     teacher: 1,
                     group: 0,
@@ -354,7 +354,7 @@ export default class App extends Component {
                 {
                     number: 1,
                     time: '09:00:00',
-                    duration: 45,
+                    duration: 1,
                     lessonId: 2,
                     teacher: 1,
                     group: 0,
@@ -363,7 +363,7 @@ export default class App extends Component {
                 {
                     number: 2,
                     time: '09:55:00',
-                    duration: 45,
+                    duration: 1,
                     lessonId: 2,
                     teacher: 1,
                     group: 0,
@@ -372,7 +372,7 @@ export default class App extends Component {
                 {
                     number: 3,
                     time: '10:50:00',
-                    duration: 45,
+                    duration: 1,
                     lessonId: 2,
                     teacher: 1,
                     group: 0,
@@ -383,7 +383,7 @@ export default class App extends Component {
                 {
                     number: 1,
                     time: '09:00:00',
-                    duration: 45,
+                    duration: 1,
                     lessonId: 2,
                     teacher: 1,
                     group: 0,
@@ -392,7 +392,7 @@ export default class App extends Component {
                 {
                     number: 2,
                     time: '09:55:00',
-                    duration: 45,
+                    duration: 1,
                     lessonId: 2,
                     teacher: 1,
                     group: 0,
@@ -401,7 +401,7 @@ export default class App extends Component {
                 {
                     number: 3,
                     time: '10:50:00',
-                    duration: 45,
+                    duration: 1,
                     lessonId: 2,
                     teacher: 1,
                     group: 0,
@@ -412,7 +412,7 @@ export default class App extends Component {
                 {
                     number: 1,
                     time: '09:00:00',
-                    duration: 45,
+                    duration: 1,
                     lessonId: 2,
                     teacher: 1,
                     group: 0,
@@ -421,7 +421,7 @@ export default class App extends Component {
                 {
                     number: 2,
                     time: '09:55:00',
-                    duration: 45,
+                    duration: 1,
                     lessonId: 2,
                     teacher: 1,
                     group: 0,
@@ -430,7 +430,7 @@ export default class App extends Component {
                 {
                     number: 3,
                     time: '10:50:00',
-                    duration: 45,
+                    duration: 1,
                     lessonId: 2,
                     teacher: 1,
                     group: 0,
@@ -505,8 +505,6 @@ export default class App extends Component {
         ],
         plan: [],
         stateMainAdmin: 0,
-        stateDelete: 0,
-        popUpDelete: null,
         closeSelect: false,
         id: 0,
         classId: null,
@@ -589,44 +587,12 @@ export default class App extends Component {
             }
             this.setState({state: newState})
         },
-        deleteLesson: (idTeacher, idLesson) => {
-            let newState = { ...this.state }
-            newState.stateAdmin.state.teachers[idTeacher].lessons.splice(idLesson, 1);
-            this.setState({state: newState})
-        },
-        addTeacher: (value) => {
-            let newState = { ...this.state }
-            newState.stateAdmin.state.teachers.push(value)
-            this.setState({ state: newState })
-        },
-        addParent: (value) => {
-            let newState = { ...this.state }
-            newState.stateAdmin.state.parents.push(value)
-            this.setState({ })
-        },
-        openDelete: (id) => {
-            let newState = { ...this.state }
-            newState.stateAdmin.state.id = id
-            newState.stateAdmin.state.stateDelete = 1
-            this.setState({ state: newState })
-        },
-        openAdd: (id) => {
-            let newState = { ...this.state }
-            newState.stateAdmin.state.id = id
-            newState.stateAdmin.state.stateDelete = 2
-            this.setState({ state: newState })
-        },
-        closeDelete: () => {
-            let newState = { ...this.state }
-            newState.stateAdmin.state.stateDelete = 0
-            this.setState({ state: newState })
-        },
+
+
+
+
         stateFuncChangTeacher: {
-            stateDeleteTeacher: (value) => {
-                let newState = { ...this.state }
-                newState.stateAdmin.state.teachers = value
-                this.setState({ state: newState })
-            },
+
             changeSecondName: (value, id) => {
                 let newState = { ...this.state }
                 newState.stateAdmin.state.teachers[id].name.secondName = value;
@@ -679,14 +645,7 @@ export default class App extends Component {
             },
         },
         stateFuncChangParent: {
-            deleteChildren: (idParent, idChildren) => {
-                let newState = { ...this.state }
-                newState.stateAdmin.state.parents[idParent].children.splice(idChildren, 1);
-                this.setState({ state: newState })
-            },
-            stateDeleteParent: (value) => {
-                this.setState({parents: value}) 
-            },
+
             changeSecondName: (value, id) => {
                 let newState = { ...this.state }
                 newState.stateAdmin.state.parents[id].name.secondName = value;
@@ -729,14 +688,7 @@ export default class App extends Component {
             }
         },
         stateFuncChangSchoolboy: {
-            stateDeleteSchoolboy: (value) => {
-                this.setState({schoolboys: value}) 
-            },
-            addSchoolboy: (value) => {
-                let newState = { ...this.state }
-                newState.stateAdmin.state.schoolboys.push(value)
-                this.setState({ state: newState })
-            },
+
             changeSecondName: (value, id) => {
                 let newState = { ...this.state }
                 newState.stateAdmin.state.schoolboys[id].name.secondName = value;
@@ -789,20 +741,6 @@ export default class App extends Component {
             },
         },
         stateFuncSchedule: {
-            addLesson: (idDay) => {
-                let newState = { ...this.state }
-                let lesson = {
-                    number: newState.stateAdmin.state.schedule[idDay].length + 1 ,
-                    time: '',
-                    duration: null,
-                    lessonId: 0,
-                    teacher: 0,
-                    group: [],
-                    change: 0,
-                }
-                newState.stateAdmin.state.schedule[idDay].push(lesson)
-                this.setState({ state: newState })
-            },
             changeDuration: (value, idDay, idLesson) => {
                 let newState = { ...this.state }
                 newState.stateAdmin.state.schedule[idDay][idLesson].duration = value
@@ -844,26 +782,9 @@ export default class App extends Component {
                 newState.stateAdmin.state.schedule[idDay][idLesson].change = 0
                 this.setState({ state: newState })
             },
-            deleteLesson: (idDay, idLesson) => {
-                let newState = { ...this.state }
-                newState.stateAdmin.state.schedule[idDay].splice(idLesson, 1)
-                newState.stateAdmin.state.schedule.map((day)=>{
-                    day.map((lesson, numLesson) => {
-                        lesson.number = numLesson + 1
-                    })
-                })
-                this.setState({ state: newState })
-            }
+
         },
         stateFuncChangType: {
-            stateDeleteType: (value) => {
-                this.setState({types: value}) 
-            },
-            addType: (value) => {
-                let newState = { ...this.state }
-                newState.stateAdmin.state.types.push(value)
-                this.setState({ state: newState })
-            },
             changeName: (value, id) => {
                 let newState = { ...this.state }
                 newState.stateAdmin.state.types[id].name = value;
@@ -876,14 +797,6 @@ export default class App extends Component {
             },
         },
         stateFuncChangLesson: {
-            stateDeleteLesson: (value) => {
-                this.setState({lessons: value}) 
-            },
-            addLesson: (value) => {
-                let newState = { ...this.state }
-                newState.stateAdmin.state.lessons.push(value)
-                this.setState({ state: newState })
-            },
             changeName: (value, id) => {
                 let newState = { ...this.state }
                 newState.stateAdmin.state.lessons[id].name = value;
@@ -894,26 +807,11 @@ export default class App extends Component {
                 newState.stateAdmin.state.lessons[id].shortName = value;
                 this.setState({ state: newState })
             },
-            stateFuncAdd: {
-                changeName: (value) => {
-                    this.state.lesson.name = value;
-                    this.forceUpdate()
-                },
-                changeShortName: (value) => {
-                    this.state.lesson.shortName = value;
-                    this.forceUpdate()
-                },
-            }
+
         },
         stateFuncChangPosition: {
-            stateDeletePosition: (value) => {
-                this.setState({positions: value}) 
-            },
-            addPosition: (value) => {
-                let newState = { ...this.state }
-                newState.stateAdmin.state.profession.push(value)
-                this.setState({ state: newState })
-            },
+
+
             changeName: (value, id) => {
                 let newState = { ...this.state }
                 newState.stateAdmin.state.profession[id].name = value;

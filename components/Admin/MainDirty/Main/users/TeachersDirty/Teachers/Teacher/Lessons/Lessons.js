@@ -4,7 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Select from '@material-ui/core/Select';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
-import del from './delete.svg'
 
 
 const useStyles = makeStyles(theme => ({
@@ -67,7 +66,6 @@ const useStyles = makeStyles(theme => ({
                             return(
                                     <div className={Classes.lessonLine}  key={"lesson" + i}>
                                         <div className={Classes.lesson}>{e}</div>
-                                        <div className={Classes.deleteBtn} onClick={() => {props.deleteLesson(props.id, i)}}><img src={del} /></div>
                                     </div>
                                 )
                         })}

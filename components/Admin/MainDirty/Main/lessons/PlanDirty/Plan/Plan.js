@@ -5,7 +5,6 @@ import Select from '@material-ui/core/Select';
 import Classes from './Lesson.module.css';
 import TextField from '@material-ui/core/TextField';
 import save from './save.svg'
-import deleteSvg from './delete.svg'
 import { OutlinedInput } from '@material-ui/core';
 
 export default function Plan(props){

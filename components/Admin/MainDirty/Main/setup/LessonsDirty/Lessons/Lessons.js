@@ -2,7 +2,6 @@ import React from 'react'
 import Lesson from './Lesson/Lesson'
 import Classes from './Lessons.module.css'
 import plus from './plus.svg'
-import AddLessonDirty from './AddLessonDirty/AddLessonDirty';
 
 class Lessons extends React.Component {
     constructor(props){
@@ -10,22 +9,14 @@ class Lessons extends React.Component {
     }
 
 
-    stateAdd=null;
 
     render(){
-        if(this.props.stateAdd === 1){
-            this.stateAdd = <AddLessonDirty 
-                                        profession={this.props.profession}
-                                        closeAdd={this.props.closeAddLesson}
-                                        addLesson={this.props.stateFunc.stateFuncChangLesson.addLesson}/>
-        } else this.stateAdd = null
+
 
         return(
             <>
-                {this.stateAdd}
                 <div className={Classes.addTeach}>
                     <div>Учні</div>
-                    <div className={Classes.addBtn} onClick={this.props.openAddLesson}><img src={plus}/></div>
                 </div>
                 <div className={Classes.LessonLine}>
                     <div className={Classes.numberTitle}>№</div>
@@ -40,10 +31,6 @@ class Lessons extends React.Component {
                             lessons = {this.props.state}
                             profession={this.props.profession} 
                             key={"lesson" + i}
-                            closeDelete={this.props.closeDelete}
-                            openDelete={this.props.openDelete}
-                            openAdd={this.props.openAdd}
-                            stateDelete={this.props.stateDelete}
                             />
                     )
                 })}

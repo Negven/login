@@ -6,17 +6,7 @@ class TypesDirty extends React.Component {
         super(props)
     }
 
-    stateAdd = null
 
-    openAddType = () => {
-        this.stateAdd=1
-        this.forceUpdate()
-    }
-
-    closeAddType = () => {
-        this.stateAdd=0
-        this.forceUpdate()
-    }
     
 
     render(){
@@ -25,15 +15,9 @@ class TypesDirty extends React.Component {
                     stateFunc={this.props.stateFunc}
                     profession={this.props.profession} 
                     classes={this.props.classes} 
-                    stateAdd={this.stateAdd}
-                    closeDelete={this.props.closeDelete}
-                    openDelete={this.props.openDelete}
-                    openAddType={this.openAddType}
                     state={this.props.state}
                     type={this.props.type}
-                    stateDelete={this.props.stateDelete}
-                    openAdd={this.props.openAdd}
-                    closeAddType={this.closeAddType}/>
+                    />
             </div>
         )
     }
